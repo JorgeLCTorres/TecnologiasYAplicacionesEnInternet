@@ -29,10 +29,30 @@
             <div class="container mx-auto flex justify-between items-center">
                 <h1 class="text gap-1 item-center">Devstagram</h1>
 
-                <nav class="flex gap-1 item-center">
-                    <a href="#" class="font bold uppercase text-gray-600 text-sm">Login</a>
-                    <a href="/crear-cuenta" class="font bold uppercase text-gray-600 text-sm">Crear cuenta</a>
-                </nav>
+                <!-- APLICAR Helper DE AUTENTICACIÓN auth PARA VERIFICAR SI ESTA AUTENTICADO -->
+                @auth
+                    <nav class="flex gap-2 items-center">
+                        Hola:
+                            <span class="font-normal">
+                                {{auth()->user()->username}}
+                            </span>
+                        <!-- AGREGAR SEGURIDAD AL LOGOUT -->
+                        <form method="POST" action="{{route('logout')}}">
+                            @csrf
+                            <button type="submit" class="font-bold uppercase text-gray-600 text-sm">
+                                Cerrar sesión
+                            </button>
+                        </form>
+                    </nav>  
+                @endauth
+
+                <!-- DETERMINAR A USUARIO NO AUTENTICADO -->
+                @guest
+                    <nav class="flex gap-2 items-center">
+                        <a href="#" class="font bold uppercase text-gray-600 text-sm">Login</a>
+                        <a href="{{route('register')}}" class="font bold uppercase text-gray-600 text-sm">Crear cuenta</a>
+                    </nav>
+                @endguest
             </div>
         </header>
         {{-- / header --}}
