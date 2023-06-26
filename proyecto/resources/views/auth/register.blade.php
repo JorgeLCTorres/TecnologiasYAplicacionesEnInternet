@@ -84,7 +84,7 @@
                     <input 
                         id="password" 
                         name="password" 
-                        type="pass" 
+                        type="password" 
                         placeholder="Tu password" 
                         class="border p-3 w-full rounded-lg">
                 </div>
@@ -96,7 +96,7 @@
                     <input 
                         id="password_confirmation" 
                         name="password_confirmation" 
-                        type="pass" 
+                        type="password" 
                         placeholder="Confirmar password" 
                         class="border p-3 w-full rounded-lg">
                 </div>

@@ -24,6 +24,17 @@ class User extends Authenticatable
         'username',
     ];
 
+    //CREAR MÉTODO DE RELACIÓN
+    public function post(){
+        //RELACIÓN DONDE UN USUARIO PUEDE REALIZAR MULTIPLES POST DE PUBLICACIÓN
+        return $this->hasMany(Post::class);
+    }
+
+    //CREAR UNA RELACIÓN DE POST (UNO) A USER
+    public function user(){
+        return $this->belongsTo(User::class)->selected(['name', 'username']);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

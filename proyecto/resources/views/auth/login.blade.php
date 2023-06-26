@@ -56,7 +56,7 @@
                     <input 
                         id="password" 
                         name="password" 
-                        type="pass" 
+                        type="password" 
                         placeholder="Tu password" 
                         class="border p-3 w-full rounded-lg">
                 </div>
